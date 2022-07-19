@@ -5,17 +5,26 @@ from app.core.config import settings
 
 
 def get_application():
-    _app = FastAPI(title=settings.PROJECT_NAME)
+    app = FastAPI(title=settings.PROJECT_NAME)
 
-    _app.add_middleware(
+    origins = [
+        "http://localhost",
+        "https://localhost",
+        "http://localhost:8080",
+        "http://localhost:8100",
+        f"https://{settings.env}.blox.oceidon.com",
+        f"https://www.{settings.env}.blox.oceidon.com",
+    ]
+
+    app.add_middleware(
         CORSMiddleware,
-        allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+        allow_origins=origins,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
 
-    return _app
+    return app
 
 
 app = get_application()
