@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.routes import items, villagers
 
 
 def get_application():
@@ -12,8 +13,8 @@ def get_application():
         "https://localhost",
         "http://localhost:8080",
         "http://localhost:8100",
-        f"https://{settings.env}.blox.oceidon.com",
-        f"https://www.{settings.env}.blox.oceidon.com",
+        "https://churchofiron.co.uk",
+        "https://www.churchofiron.co.uk",
     ]
 
     app.add_middleware(
@@ -23,6 +24,9 @@ def get_application():
         allow_methods=["*"],
         allow_headers=["*"],
     )
+    
+    app.include_router(items.router, tags=["items"], prefix="/items")
+    app.include_router(villagers.router, tags=["villagers"], prefix="/villager")
 
     return app
 
