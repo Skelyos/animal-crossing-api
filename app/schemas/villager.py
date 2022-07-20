@@ -3,10 +3,10 @@ from pydantic import BaseModel, Field
 from app.schemas.pyobjectid import PyObjectId
 
 class Villager(BaseModel):
-    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
+    mongodb_id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     gender: str
     species: str
-    birthday: str
+    birthday: str = None
     name: str
     games: object
 
