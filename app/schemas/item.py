@@ -1,3 +1,4 @@
+from typing import List
 from bson import ObjectId
 from pydantic import BaseModel, Field
 from app.schemas.pyobjectid import PyObjectId
@@ -8,6 +9,17 @@ class Item(BaseModel):
     name: str
     category: str
     games: object
+
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+class ItemOut(BaseModel):
+    items: List[Item]
+    page_size: int
+    total: int
+    page: int
 
     class Config:
         allow_population_by_field_name = True

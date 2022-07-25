@@ -142,3 +142,5 @@ cython_debug/
 
 # Random file I reacted for importing
 MongoDBJsonImporter.py
+node_modules
+.serverless
