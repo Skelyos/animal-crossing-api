@@ -139,3 +139,8 @@ cython_debug/
 
 # Text Editor
 .vscode
+
+# Random file I reacted for importing
+MongoDBJsonImporter.py
+node_modules
+.serverless
