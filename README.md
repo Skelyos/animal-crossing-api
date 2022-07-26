@@ -1,6 +1,10 @@
 # animal-crossing-api
 
 
+## Credit for data
+
+Item & villager database was populated using [VillagerDB](https://github.com/jefflomacy/villagerdb) open-source data library.
+
 ## TODO
 
 This I need to do still:
