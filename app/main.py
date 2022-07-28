@@ -12,6 +12,7 @@ origins = [
     "https://localhost",
     "http://localhost:8080",
     "http://localhost:8100",
+    "http://localhost:8101",
     "https://churchofiron.co.uk",
     "https://www.churchofiron.co.uk",
 ]

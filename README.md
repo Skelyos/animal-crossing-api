@@ -15,6 +15,7 @@ This I need to do still:
 
 ## Deploying to Lambda
 - Must first set up your AWS this can be done with serverless (google it.)
-- Run `serverless deploy --region us-east-2` to push to AWS Lambda.
+- Must also have docker open so that it can create a docker build to push up to AWS Lambda.
+- Run `serverless deploy --region us-east-2` to push dev build up to AWS Lambda.
 
 
