@@ -7,6 +7,10 @@ from app.routes import items, villagers
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
+# TODO - TESTING GROUNDS
+from MongoDBJsonImporter import populate_database
+populate_database() 
+
 origins = [
     "http://localhost",
     "https://localhost",
@@ -15,6 +19,8 @@ origins = [
     "http://localhost:8101",
     "https://churchofiron.co.uk",
     "https://www.churchofiron.co.uk",
+    "https://ac-item-manager.co.uk",
+    "https://www.ac-item-manager.co.uk"
 ]
 
 app.add_middleware(
