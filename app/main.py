@@ -7,10 +7,6 @@ from app.routes import items, villagers
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
-# TODO - TESTING GROUNDS
-from MongoDBJsonImporter import populate_database
-populate_database() 
-
 origins = [
     "http://localhost",
     "https://localhost",
